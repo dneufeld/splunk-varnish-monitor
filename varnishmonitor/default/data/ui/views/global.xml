@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dashboard>
+  <label>Global overview</label>
+  <row>
+    <chart>
+      <searchName>[varnish] varnish time to first byte from backend</searchName>
+      <title>varnish time to first byte from backend</title>
+    </chart>
+    <chart>
+      <searchName>[varnish] varnish cache action</searchName>
+      <title>Varnish cache action</title>
+      <option name="drilldown">all</option>
+    </chart>
+  </row>
+  <row>
+    <chart>
+      <searchName>[varnish] Hits by bad status codes</searchName>
+      <title>Varnish hits by bad status codes</title>
+      <option name="drilldown">all</option>
+    </chart>
+    <chart>
+      <searchName>[varnish] Varnish hits by good status codes</searchName>
+      <title>Varnish hits by good status codes</title>
+    </chart>
+  </row>
+  <row>
+    <chart>
+      <searchName>[varnish] Hits by method</searchName>
+      <title>Varnish hits by method</title>
+      <option name="drilldown">all</option>
+    </chart>
+  </row>
+</dashboard>

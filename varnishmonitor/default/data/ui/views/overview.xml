@@ -1,0 +1,41 @@
+<form class="formsearch">
+  <label>Host overview</label>
+
+  <fieldset>
+    <input type="dropdown" token="host" searchWhenChanged="false">
+      <default>*</default>
+      <populatingSearch fieldForValue="value" fieldForLabel="label">| metadata type=hosts index=varnish | eval label=host | eval value=host</populatingSearch>
+    </input>
+    <input type="time" searchWhenChanged="false"/>
+  </fieldset>
+
+  <row>
+    <single>
+      <searchTemplate>`backend_failures($host$)`</searchTemplate>
+      <title>Backend Failures</title>
+      <option name="field">backend_fail</option>
+      <option name="classField">range</option>
+    </single>
+  </row>
+  <row>
+    <chart>
+    	<title>Clients Connected</title>
+    	<searchTemplate>`clients_connected($host$)`</searchTemplate>
+    	<option name="charting.chart">line</option>
+	<option name="charting.chart.nullValueMode">connect</option>
+    	<option name="charting.primaryAxisTitle.text">Time</option>
+    	<option name="charting.secondaryAxisTitle.text">Clients Connected</option>
+	<option name="charting.legend.labelStyle.maximumWidth">500</option>
+    </chart>
+    <chart>
+      <title>Cached Objects</title>
+      <searchTemplate>`cached_objects($host$)`</searchTemplate>
+      <option name="charting.chart">line</option>
+  <option name="charting.chart.nullValueMode">connect</option>
+      <option name="charting.primaryAxisTitle.text">Time</option>
+      <option name="charting.secondaryAxisTitle.text">Cached Objects</option>
+  <option name="charting.legend.labelStyle.maximumWidth">500</option>
+    </chart>
+  </row>
+</form>
+

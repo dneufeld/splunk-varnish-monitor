@@ -1,0 +1,6 @@
+<nav>
+  <view name="welcome"/>
+  <view name="flashtimeline"/>
+  <view name="global"/>
+  <view name="overview"/>
+</nav>
